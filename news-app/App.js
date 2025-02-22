@@ -1,7 +1,9 @@
-import news from './news.js';
+import React from 'react';
+import { FlatList }  from 'react-native'
 
-export default function app() {
-    return(
-        <news />
-    )
+import { getNews } from './src/news.js';
+
+export default class App extends React.Component {
+    
 }
+
