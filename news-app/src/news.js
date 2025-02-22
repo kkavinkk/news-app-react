@@ -1,9 +1,5 @@
-api_key=""
+const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=7161a594098c49ecb0873c3b17e8d0c8'
 
-function getNews() {
-
-}
-
-export default function news() {
-    const
+export default function getNews() {
+    let result
 }
