@@ -5,5 +5,5 @@ function getNews() {
 }
 
 export default function news() {
-    
+    const
 }
