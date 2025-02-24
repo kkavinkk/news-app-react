@@ -18,7 +18,7 @@ export default class App extends React.Component { //App is the default export o
         getNews() // this function is in news.js and fetchs the news from the API
         .then(articles => this.setState({ articles, refreshing: false })) // once displayed the article is updates with fetched data and loading is complete
         .catch(() => this.setState({ refreshing: false })) // is there is an error in the data fetching it only updates the refreshing
-        //ensures app is not stuck in a loading state
+        //ensures app is not stuck in a loading state, CATCH IS CALLED IN REJECTING CASES
     }
 }
 
