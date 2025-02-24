@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList }  from 'react-native'
 
 import { getNews } from './src/news.js';
+// IMPORT ATICLE COMPONENT HERE
 
 export default class App extends React.Component { //App is the default export of the file
     constructor(props){ //the constructor is called when an instance of the component is created(the compnent here is "articles")
@@ -28,6 +29,20 @@ export default class App extends React.Component { //App is the default export o
             },
             () => this.fetchNews()
         ); // the entire function starts a spinner animation and calls fetchNews() so its called IMMEDIATLLY
+    }
+
+    render() {
+        return(
+            <FlatList
+            data={this.state.articles} // data is the array of articles from this.state
+            renderItem={({ item }) => <Article article={item} />} // Render Item takes a function to 
+            // render each item in an array, but here it just returns "Article" component
+            // Article Item is passed as a prop to use later in that component
+            keyExtractor={item => item.url}
+            refreshing={this.state.refreshing}
+            onRefresh={this.handleRefresh.bind(this)}
+            />  
+        );
     }
 }
 
