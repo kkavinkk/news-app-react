@@ -21,13 +21,13 @@ export default class App extends React.Component { //App is the default export o
         //ensures app is not stuck in a loading state, CATCH IS CALLED IN REJECTING CASES
     }
 
-    handleRefresh() {
+    handleRefresh() { // If an error accurs in the fetchNews() function then this will activate causing new articles to laod
         this.setState(
             {
                 refreshing: true
             },
             () => this.fetchNews()
-        );
+        ); // the entire function starts a spinner animation and calls fetchNews() so its called IMMEDIATLLY
     }
 }
 
