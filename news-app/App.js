@@ -9,5 +9,16 @@ export default class App extends React.Component { //App is the default export o
         this.state = { articles: [], refreshing: true };// "articles: []" is an empty array meant to hold the articles, refreshing is true sp the app laods
         this.fetchNews = this.fetchNews.bind(this) // in JS we MUST manually bind thse together
     }
+
+    componentDidMount() { // a lifecycle method that runs after the component is added to the dom(good way to fetch data from api)
+        this.fetchNews(); // gets the news articles
+    }
+
+    fetchNews() {
+        getNews() // this function is in news.js and fetchs the news from the API
+        .then(articles => this.setState({ articles, refreshing: false })) // once displayed the article is updates with fetched data and loading is complete
+        .catch(() => this.setState({ refreshing: false })) // is there is an error in the data fetching it only updates the refreshing
+        //ensures app is not stuck in a loading state
+    }
 }
 
