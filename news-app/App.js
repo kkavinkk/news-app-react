@@ -20,5 +20,14 @@ export default class App extends React.Component { //App is the default export o
         .catch(() => this.setState({ refreshing: false })) // is there is an error in the data fetching it only updates the refreshing
         //ensures app is not stuck in a loading state, CATCH IS CALLED IN REJECTING CASES
     }
+
+    handleRefresh() {
+        this.setState(
+            {
+                refreshing: true
+            },
+            () => this.fetchNews()
+        );
+    }
 }
 
