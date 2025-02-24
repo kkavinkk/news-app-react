@@ -38,9 +38,10 @@ export default class App extends React.Component { //App is the default export o
             renderItem={({ item }) => <Article article={item} />} // Render Item takes a function to 
             // render each item in an array, but here it just returns "Article" component
             // Article Item is passed as a prop to use later in that component
-            keyExtractor={item => item.url}
-            refreshing={this.state.refreshing}
-            onRefresh={this.handleRefresh.bind(this)}
+            keyExtractor={item => item.url} // assigns a unique key for efficient rendering(mandatory for react apps)
+            refreshing={this.state.refreshing} // determines if the list is cuurently being refreshed(controls appearance of the spinner)
+            onRefresh={this.handleRefresh.bind(this)} // ttriggered when user pulls down to the refresh list
+            //handlerefresh get new data, .bind ensures the handleRefresh refers to the correct component instance
             />  
         );
     }
