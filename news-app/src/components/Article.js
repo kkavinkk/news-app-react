@@ -14,8 +14,10 @@ export default class Article extends React.Component {
             url
         } = this.props.article;
         const { noteStyle, featuredTitleStyle } = styles;
+        // Below we are using the 'moment' library to convert the date
+        // to the time passed since the artictle was published()
         const time = moment(publishedAt || moment.now()).fromNow();
-        const defaulting = 'default.png';
+        const defaulting = 'default.png'; // image thet shows up if nothing there
 
         return (
             <TouchableNativeFeedback
