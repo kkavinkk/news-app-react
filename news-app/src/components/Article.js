@@ -23,6 +23,19 @@ export default class Article extends React.Component {
             <TouchableNativeFeedback
             useForeground
             onPress={() => Linking.openURL(url)}
+            >
+                <Card
+                    featuredTitle={title}
+                    featuredTitleStyle={featuredTitleStyle}
+                    image={{
+                        uri: irlToImage || defaulting
+                    }}
+                >
+                    <Text style={{ marginBottom: 10 }}>
+                        {description || 'Read More...'}
+                    </Text>
+                </Card>
+            </TouchableNativeFeedback>
         )
     }
 }
