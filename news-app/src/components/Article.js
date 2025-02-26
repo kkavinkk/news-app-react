@@ -34,6 +34,10 @@ export default class Article extends React.Component {
                     <Text style={{ marginBottom: 10 }}>
                         {description || 'Read More...'}
                     </Text>
+                    <Divider style={{ backgroundColor = '#dfe6ef' }} />
+                    <View
+                        style={}
+                    ></View>
                 </Card>
             </TouchableNativeFeedback>
         )
