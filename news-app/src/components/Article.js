@@ -20,7 +20,7 @@ export default class Article extends React.Component {
         const defaulting = 'default.png'; // image thet shows up if nothing there
 
         return (
-            <TouchableNativeFeedback
+            <TouchableNativeFeedback // Function in react native that mods the DOC?????????
             useForeground
             onPress={() => Linking.openURL(url)}
             >
