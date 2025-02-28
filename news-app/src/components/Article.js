@@ -40,6 +40,8 @@ export default class Article extends React.Component {
                     ></View>
                 </Card>
             </TouchableNativeFeedback>
-        )
+        );
     }
 }
+
+const styles
