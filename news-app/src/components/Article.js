@@ -44,4 +44,6 @@ export default class Article extends React.Component {
     }
 }
 
-const styles
+const styles = {
+    
+}
