@@ -21,24 +21,27 @@ export default class Article extends React.Component {
         const defaulting = 'default.png'; // image thet shows up if nothing there
 
         return (
-            <TouchableNativeFeedback // Function in react native that mods the DOC?????????
-            useForeground
-            onPress={() => Linking.openURL(url)}
+            <TouchableNativeFeedback
+                useForeground
+                onPress={() => Linking.openURL(url)}
             >
                 <Card
-                    featuredTitle={title}
-                    featuredTitleStyle={featuredTitleStyle}
-                    image={{
-                        uri: urlToImage || defaultImg
-                    }}
+                featuredTitle={title}
+                featuredTitleStyle={featuredTitleStyle}
+                image={{
+                    uri: urlToImage || defaultImg
+                }}
                 >
-                    <Text style={{ marginBottom: 10 }}>
-                        {description || 'Read More...'}
-                    </Text>
-                    <Divider style={{ backgroundColor: '#dfe6ef' }} />
-                    <View
-                        style={}
-                    ></View>
+                <Text style={{ marginBottom: 10 }}>
+                    {description || 'Read More..'}
+                </Text>
+                <Divider style={{ backgroundColor: '#dfe6e9' }} />
+                <View
+                    style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+                >
+                    <Text style={noteStyle}>{source.name.toUpperCase()}</Text>
+                    <Text style={noteStyle}>{time}</Text>
+                </View>
                 </Card>
             </TouchableNativeFeedback>
         );
