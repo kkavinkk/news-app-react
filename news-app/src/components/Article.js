@@ -2,6 +2,7 @@ import React from "react";
 import { View, Linking, TouchableNativeFeedback } from 'react-native';
 import { Text, Button, Card, Divider, makeStyles } from 'react-native-elements'
 import moment from "moment";
+import { color } from "react-native-elements/dist/helpers";
 
 export default class Article extends React.Component {
     render() {
@@ -28,13 +29,13 @@ export default class Article extends React.Component {
                     featuredTitle={title}
                     featuredTitleStyle={featuredTitleStyle}
                     image={{
-                        uri: irlToImage || defaulting
+                        uri: urlToImage || defaultImg
                     }}
                 >
                     <Text style={{ marginBottom: 10 }}>
                         {description || 'Read More...'}
                     </Text>
-                    <Divider style={{ backgroundColor = '#dfe6ef' }} />
+                    <Divider style={{ backgroundColor: '#dfe6ef' }} />
                     <View
                         style={}
                     ></View>
@@ -45,5 +46,16 @@ export default class Article extends React.Component {
 }
 
 const styles = {
-    
-}
+    noteStyle: {
+        margin: 5,
+        fonstStyle: 'italic',
+        color: '#b2bec3',
+        fontSize: 10,
+    },
+    featuredTitleStyle: {
+        marginHorizontal: 5,
+        textShadowColor: '#00000f',
+        textShadowOffset: { width: 3, height: 3 },
+        textShadowRadius: 3
+    }
+};
